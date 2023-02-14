@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Scanner;
+
 public class Player{
     /*
       Class Instances
@@ -10,13 +12,20 @@ public class Player{
       Constructor
      */
     public Player(String name,char symbol){
-        //TODO: initialize class instances
+        this.name = name;
+        this.symbol = symbol;
     }
     /*
         Class Methods
      */
-    public void get_move(int x,int y){
-        //TODO: Take input from user
+    public int[] get_move(int x,int y){ // Returns an array of 2 positions [x,y] to validate them
+        int[] moves = new int[2];
+        Scanner move = new Scanner(System.in);
+        System.out.println("Enter X coordinate: ");
+        moves[0] =  move.nextInt();
+        System.out.println("Enter Y coordinate: ");
+        moves[1] = move.nextInt();
+        return moves;
     }
 
     public String get_name(){
