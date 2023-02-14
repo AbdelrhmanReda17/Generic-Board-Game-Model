@@ -4,12 +4,16 @@ public abstract class Board {
     /*
     Instances
      */
-    private int n;
-    private char[][] grid = new char[n][n];
+    protected int n;
+    protected char[][] grid;
     /*
     Constructor
      */
-    public Board(int n){ this.n = n;}
+    public Board(int n){
+        this.n = n;
+        grid = new char[n][n];
+        for(int i=0;i<n;i++) for(int j=0;j<n;j++) grid[i][j] = '_';
+    }
     /*
     Operations
      */
